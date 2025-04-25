@@ -129,3 +129,76 @@ const greeting = (name) => {
 
 console.log(greeting());
 console.log(greeting("Luan"));
+
+// 7 - valor default
+const customGreeeting = (name, greet = "Olá") => {
+    return `${greet}, ${name}!`
+}
+
+console.log(customGreeeting("Luan"));
+console.log(customGreeeting("Luna", "Bom dia"))
+
+const repeatText = (text, repeat = 2) => {
+
+    for(let i = 0; i < repeat; i++) {
+        console.log(text)
+    }
+}
+
+repeatText("oi");
+repeatText("ola", 5)
+
+// 8 - Closure
+function someFunction() {
+    let txt = "alguma coisa";
+
+    function display() {
+        console.log(txt)
+    }
+    display();
+}
+
+someFunction();
+
+const multiplicationClosure = (n) => {
+    return (m) => {
+        return n * m;
+    }
+}
+
+const c1 = multiplicationClosure(5);
+const c2 = multiplicationClosure(10);
+
+console.log(c1);
+console.log(c2);
+
+console.log(c1(5));
+console.log(c2(10));
+
+// 9 - Recursão
+const unitlTen = (n,m) => {
+
+    if (n < 10) {
+        console.log("A função parou de executar");
+    } else {
+        const x = n - m;
+        console.log(x);
+
+        unitlTen(x, m);
+    }
+}
+
+unitlTen(100,7);
+
+function fatorial(x) {
+    if (x === 0) {
+        return 1;
+    } else {
+        return x * fatorial(x - 1);
+    }
+}
+
+const num = 6;
+const result = fatorial(num);
+
+console.log(`o fatorial de ${num} é ${result}`);
