@@ -91,3 +91,87 @@ if (q > 5 && w > 20) {
 } else {
     console.log("Numeros mais baixos!")
 }
+
+// 9 - else if
+if (1 > 2) {
+    console.log("teste")
+} else if(2 > 3) {
+    console.log("teste 2")
+} else if(5 > 1) {
+    console.log("teste 3")
+};
+
+const userName = "Luan";
+const userAge = 20;
+
+if (userName === "Luna") {
+    console.log(`Bem vindo ${userName}`)
+} else if (userName === "Luan" && userAge === 20) {
+    console.log(`Bem vindo ${userName}, voce tem ${userAge} anos`)
+} else {
+    console.log("Nenhuma condição aceita")
+}
+
+// 10 - Estruturas de Repetição
+let p = 0;
+
+while(p < 5) {
+    console.log(`repetindo ${p}`)
+    p = p + 1;
+}
+
+// 11 - Do while
+let o = 10;
+
+do {
+    console.log(`valor de ${o}`)
+    o--;
+} while(o > 1);
+
+// 12 - for
+for (let t = 0; t < 10; t++) {
+    console.log("Repetindo for...");
+}
+
+let r = 10;
+
+for(r; r > 0; r = r - 1){
+    console.log(`o r está dimnuindo ${r}`)
+};
+
+// 13 - break
+for(let g = 20; g > 10; g--) {
+    console.log(`O valor de g é: ${g}`)
+
+    if( g === 12) {
+        console.log("O g é igual a 12")
+        break;
+    }
+}
+
+// 14 - continue
+for(let s = 0; s < 10; s++) {
+    // operador de resto = %
+    if(s % 2 === 0 && s != 0){
+        console.log(`${s} é par`)
+        continue
+    }
+}
+
+// 15 - switch
+const job = "advogado";
+
+switch (job) {
+    case "policial":
+        console.log(`voce é ${job}`);
+        break;
+    case "advogado":
+        console.log(`voce é ${job}`);
+        break;
+    case "engenheiro":
+        console.log(`voce é ${job}`);
+        break
+    default:
+        console.log("Profissão não encontrada")
+        break;
+}
