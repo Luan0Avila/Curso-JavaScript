@@ -197,4 +197,117 @@ console.log(brands.includes("Ford"));
 
 if (brands.includes("BMW")) {
     console.log("Há carros da marca BMW")
+};
+
+// 15 - Reverse
+const reverseTest = [1,2,3,4,5];
+
+reverseTest.reverse();
+
+console.log(reverseTest);
+
+// 16 - Trim
+const trimTest = "  testando \n   ";
+console.log(trimTest);
+console.log(trimTest.trim());
+
+console.log(trimTest.length);
+console.log(trimTest.trim().length);
+
+// 17 - padStart
+const testePadStart = "1";
+const newNumber = testePadStart.padStart(4,"0");
+
+console.log(testePadStart);
+console.log(newNumber);
+
+const testePadEnd = newNumber.padEnd(10, "0");
+
+console.log(testePadEnd);
+
+// 18 - Split
+const frase = "O rato roeu a roupa do rei de Roma";
+
+const arrayFrase =  frase.split(" ");
+
+console.log(arrayFrase);
+
+// 19 - Join
+const fraseDenovo = arrayFrase.join(" ");
+console.log(fraseDenovo);
+
+const itensParaComprar = ["Mouse", "Teclado", "Monitor"];
+
+const fraseDeCompra = `Precisamos comprar: ${itensParaComprar.join(", ")}`;
+console.log(fraseDeCompra);
+
+// 20 - repeat
+const palavra = "Testando ";
+console.log(palavra.repeat(5));
+
+// 21 - Rest Operator
+const somaInfinita = (...args) => {
+    let total = 0;
+
+    for(let i = 0; i < args.length;i ++) {
+        total += args[i];
+    }
+    return total;
+};
+
+console.log(somaInfinita(2,4,6,8));
+console.log(somaInfinita(2,4,6,8,10,25,32,91));
+
+// 22 - For of
+const somaInfinita2 = (...args) => {
+    let total = 0;
+    for(num of args){
+        total += num;
+    }
+    return total;
 }
+
+console.log(somaInfinita2(10,20,30));
+
+// 23 - Destructuring em objetos
+const userDetails = {
+    firstName : "Luan",
+    lastName : "Avila",
+    job : "Programador"
+}
+
+const {firstName, lastName, job} = userDetails;
+
+console.log(firstName, lastName, job);
+
+// renoaear variaveis
+const {firstName : primeiroNome} = userDetails;
+console.log(primeiroNome);
+
+// 24 - destructuring em arrays
+const myList = ["avião", "submarino", "carro", "moto"];
+const [veiculoA, veiculoB, veiculoC] = myList;
+
+console.log(veiculoA, veiculoB, veiculoC);
+
+// 25 - JSON
+const myJSon = '{"name" : "Luan", "age" : 20, "Skills" : ["Python", "Javascript", "Django"]}';
+console.log(myJSon);
+
+// 26 - JSON para objeto e objeto para JSON
+const myObject = JSON.parse(myJSon);
+console.log(myObject);
+console.log(myObject.age);
+console.log(typeof myObject);
+
+//json invalido
+const badJson = '{"name" : Luan, "age" : 20}';
+// const myBadObject = JSON.parse(badJson);
+
+myObject.isOpenToWork = true;
+console.log(myObject);
+
+const myNewJson = JSON.stringify(myObject);
+console.log(myNewJson);
+
+console.log(typeof myNewJson);
