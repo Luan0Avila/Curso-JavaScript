@@ -85,5 +85,5 @@ mainContainer.style.paddingBottom = "15px";
 
 // 14 - alterando estilos de varios elementos
 for(const li of listItens) {
-    li.style.backgroundColor = "red";
+    li.style.backgroundColor = "red";   
 }
