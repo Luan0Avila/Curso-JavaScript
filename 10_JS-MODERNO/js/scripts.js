@@ -67,6 +67,127 @@ const user = {
     }
 };
 
-user.sayUserName();
-user.sayUserNameArrow();
+// user.sayUserName();
+// user.sayUserNameArrow();
 
+// 3 - Filter
+const arr = [,2,3,4,5,6];
+
+const highNumbers = arr.filter((n) => {
+    if (n > 3) {
+        return n;
+    }
+})
+
+console.log(highNumbers);
+
+const users = [
+    {name: "Luan", avaliable : true},
+    {name: "Luna", avaliable : false},
+    {name: "Lady", avaliable : true},
+    {name: "Mateus", avaliable : false},
+    {name: "João", avaliable : true}
+]
+
+const avaliableUsers = users.filter((user) => user.avaliable);
+
+console.log(avaliableUsers);
+
+// 4 - Map
+const products = [
+    {name: "Camisa", price: 10.99, category: "Roupas"},
+    {name: "Chaleia Elétrica", price: 150, category: "Eletro"},
+    {name: "Fogão", price: 499.99, category: "Eletro"},
+    {name: "Calsa", price: 87.99, category: "Roupas"},
+];
+
+products.map((product) => {
+    if (product.category === "Roupas") {
+        product.onSale = true;
+    }
+})
+
+console.log(products);
+
+// 5 - Template literals
+const username = "Luan";
+const age = 20;
+
+console.log(`O nome do usuário é ${username} e ele tem ${age} anos`);
+
+// 6 - Destructuring
+const fruits = ["maçã","mamão", "laranja"];
+
+const [f1,f2,f3] = fruits;
+
+console.log(f1, f2);
+
+const productDetail = {
+    name : "Mouse",
+    price : 39.99,
+    category : "Periférico",
+    color : "Cinza",
+}
+
+const {name: productName, price, category, color} = productDetail;
+
+console.log(`O nome do produto é ${productName}, ele custa R$ ${price}, e é da cor ${color}`);
+
+// 7 - Spread operator
+const a1 = [1,2,3];
+const a2 = [4,5,6];
+
+const a3 = [...a1, ...a2];
+
+console.log(a3);
+
+const a4 = [0,...a3,7];
+
+console.log(a4);
+
+const carName = {name : "Gol"};
+const carBrand = {brand : "VW"};
+const ohterInfos = {km : 100000, price : 49999};
+
+const car = {...carName,...carBrand,...ohterInfos};
+
+console.log(car);
+
+// 8 - classes
+class Product {
+    constructor(name, price) {
+        this.name = name;
+        this.price = price;
+    }
+
+    productWithDiscount(discount) {
+        return this.price * ((100 - discount) / 100);
+
+    }
+}
+
+const shirt = new Product("Camisa", 20);
+
+console.log(shirt);
+
+console.log(shirt.productWithDiscount(10));
+console.log(shirt.productWithDiscount(15));
+
+// 9 - Herança
+class ProductWithAttributes extends Product {
+    constructor(name, price, colors) {
+        super(name, price);
+        this.colors = colors;
+    }
+
+    showColor() {
+        console.log("As cores são: ");
+        this.colors.forEach((color) => {
+            console.log(color);
+        });
+    }
+}
+
+const hat = new ProductWithAttributes("Chapéu", 29.99, ["Preto", "Amarelo", "Verde"]);
+
+console.log(hat);
